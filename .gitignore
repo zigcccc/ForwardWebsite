@@ -1,7 +1,8 @@
-*
+/*
 
 !.gitignore
 !/*.md
 !example-*.html
 !*.xd
-!/Examples/*
+!Examples/
+!Icons/
