@@ -1,6 +1,6 @@
-#Dokumentacija - Urejanje Forward spletne strani
+# Dokumentacija - Urejanje Forward spletne strani
 
-##Kazalo vsebine
+## Kazalo vsebine
 
 * [Uvod v urejanje](#uvod-v-urejanje)
 * [Vsebinski zaboji](#vsebinski-zaboji)
@@ -98,7 +98,7 @@ Podobno kot za glavne naslove velja tudi za podnaslove; če želimo prenesti nov
 
 Ti naslovi se v glavnem uporabljajo znotraj kartic ali mrežno deljene vsebine, navodila za implementacijo pa so opisana pri posameznih tipih vsebin (glej kazalo vsebine).
 
-###Tekoče besedilo
+### Tekoče besedilo
 
 Tekoče besedilo je glavnina vsebinskega dela. Zavit je v značko `<p>` (paragraph), da pa mu dodamo posobljno stilsko podobo, znački dodamo class `basic-paragprah`. Koda izgleda tako:
 
