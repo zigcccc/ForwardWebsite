@@ -145,7 +145,7 @@ Implementacija male fotografije je načeloma enaka implementaciji velike, le da 
 Fotografija s tekstom od nas zahteva največ dela in je natežavnejša za implementacijo. Zahteva svoj lasten zaboj, torej div element z atributom `overlayed-image-container`. Znotraj tega zaboja vstavimo klasično značko za sliko, kot opisano v prejšnih odstavkih, dodaten zaboj, z atributom `overlay`, ki je **prazen** in pa zaboj z atributom `content`, v katerega naposled vstavimo tekst zavit v značko `h3` in atributom `image-quote`. Opcijsko lahko dodamo tudi stiliziran narekovaj, ki dodatno nakazuje, da gre za neko citirano besedilo. Narekovaj dodamo s pomočjo značke `<i>` in atributa `fa fa-quote-left`. Najlažje si predstavljamo s primerom, ki je predstavljen spodaj:
 
 ```html
-<div class="content-container">
+<div class="overlayed-image-container">
 	<img src="/pot-do-željene-slike.jpg" alt="nadomestno besedilo">
 	<div class="overlay"></div>
 	<div class="content">
