@@ -10,7 +10,7 @@ const statEmailChart = function(context){
   }
 
   let myData = {
-    labels: ['Mailchimp', 'SqualaMail', 'ContactForm7'],
+    labels: labels,
     datasets: [{
       label: labels,
       data: cleanValues,

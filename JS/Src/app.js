@@ -9,10 +9,11 @@ import { statEmailChart } from './Charts'
 
 
 $(document).ready(() => {
-  const sideMenu = document.querySelector('#LeftMenu');
-  const inputs = document.querySelectorAll('.special-form .form-control');
-  const paragraphs = document.querySelectorAll('p');
-  const emailStatChart = document.getElementById('statEmail');
+  const sideMenu = document.querySelector('#LeftMenu')
+  const inputs = document.querySelectorAll('.special-form .form-control')
+  const paragraphs = document.querySelectorAll('p')
+  const emailStatChart = document.getElementById('statEmail')
+  const emailStatChart2 = document.getElementById('statEmail2')
 
   if(sideMenu){
     hideSideMenu(sideMenu)
@@ -25,5 +26,6 @@ $(document).ready(() => {
   }
   if(typeof(emailStatChart) != undefined && emailStatChart != null){
     statEmailChart(emailStatChart)
+    statEmailChart(emailStatChart2)
   }
 })
