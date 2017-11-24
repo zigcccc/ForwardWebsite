@@ -1,6 +1,12 @@
 import Chart from 'chart.js'
 
 const statEmailChart = function(context){
+  let type = context.dataset.type
+  let labels = context.dataset.labels.split(', ')
+  let values = context.dataset.values.split(', ')
+
+  console.log(type, labels, values)
+
   let myData = {
     labels: ['Mailchimp', 'SqualaMail', 'ContactForm7'],
     datasets: [{
