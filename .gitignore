@@ -6,6 +6,6 @@
 !*.xd
 !Examples/
 !Icons/
-!JS/Src/
-!JS/package.json
-!JS/*.config.js
+!./JS/Src/
+!./JS/package.json
+!./JS/*.config.js
