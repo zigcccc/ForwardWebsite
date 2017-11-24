@@ -1,26 +1,26 @@
 import {
   hideSideMenu,
-  handleInputClick
+  handleInputClick,
+  hideEmptyParagraphs
 } from './PageInteractions'
 //import Chart from 'chart.js'
 
 //const MyChart = new Chart()
 
-function hideEmptyParagraphs () {
-  const paragraphs = document.querySelectorAll('p');
-  Array.from(paragraphs, (paragraph, i) => {
-    let cond = paragraph.innerText.length > 1 ? true : false;
-    if(!cond && paragraph.innerHTML == '&nbsp;'){
-      paragraph.style.display = 'none';
-    }
-  })
-}
+
 
 $(document).ready(() => {
   const sideMenu = document.querySelector('#LeftMenu');
+  const inputs = document.querySelectorAll('.special-form .form-control');
+  const paragraphs = document.querySelectorAll('p');
+
   if(sideMenu){
     hideSideMenu(sideMenu)
   }
-  hideEmptyParagraphs();
-  handleInputClick;
+  if(typeof(paragraphs) != undefined && paragraphs != null){
+    hideEmptyParagraphs(paragraphs)
+  }
+  if (typeof(inputs) != undefined && inputs != null) {
+    handleInputClick(inputs)
+  } 
 })
