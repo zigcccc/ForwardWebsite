@@ -197,7 +197,7 @@ Primer, ko bi naprimer vsebino od naslova želeli odmakniti za 40px bi bil:
 ```
 
 ## Grafi
-Grafi na strani so odlična presentacija povprečnemu uporabniku razmeroma "dolgočasnih" podatkov. Implementacija grafa na stran je povsem enostavna, držati se moramo le naslednjih pravil:
+Grafi na strani so odlična prezentacija povprečnemu uporabniku razmeroma "dolgočasnih" podatkov. Implementacija grafa na stran je povsem enostavna, držati se moramo le naslednjih pravil:
 
 ```html
 <div class="content-container">
