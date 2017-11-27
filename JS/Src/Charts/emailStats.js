@@ -15,14 +15,14 @@ const statEmailChart = function(context){
       label: labels,
       data: cleanValues,
       backgroundColor: [
-        '#84DBFF',
         '#0E76BC',
-        '#242D3C'
+        '#242D3C',
+        '#84DBFF'
       ],
       borderColor: [
-        '#84DBFF',
         '#0E76BC',
-        '#242D3C'
+        '#242D3C',
+        '#84DBFF'
       ],
       borderWidth: 2
     }]
@@ -31,6 +31,12 @@ const statEmailChart = function(context){
   let chart = new Chart(context, {
     type: 'doughnut',
     data: myData,
+    options: {
+      legend: {
+        display: true,
+        position: 'bottom'
+      }
+    }
   })
   return chart
 }

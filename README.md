@@ -7,6 +7,7 @@
 * [Tipografija](#tipografija)
 * [Fotografije](#fotografije)
 * [Kontaktni obrazci](#kontaktni-obrazci)
+* [Grafi](#grafi)
 
 
 ## Uvod v urejanje
@@ -194,3 +195,31 @@ Primer, ko bi naprimer vsebino od naslova želeli odmakniti za 40px bi bil:
 <h2 class="subheading">Podnaslov</h2>
 <p class="mt-40 basic-paragraph">Vsebina, ki smo jo od naslova odmaknili za 40px</p>
 ```
+
+## Grafi
+Grafi na strani so odlična presentacija povprečnemu uporabniku razmeroma "dolgočasnih" podatkov. Implementacija grafa na stran je povsem enostavna, držati se moramo le naslednjih pravil:
+
+```html
+<div class="content-container">
+  <canvas 
+    id="graf-statistika-email"
+    class="stats-chart"
+    data-type="doughnut"
+    data-labels="oznaka1, oznaka2, oznaka3"
+    data-values="30, 50, 25"
+  ></canvas>
+</div>
+```
+
+Graf, tako kot vso ostalo vsebino, zavijemo oziroma vmestimo znotraj zaboja `content-container`. Za sam graf uporabimo značko `<canvas></canvas>` - to je posebna značka HTML5 jezika, ki nam dovoljuje prikaz kompleksnih grafičnih elementov (kar graf za razmere programiranja načeloma je). 
+
+Značka canvas na to od nas zahteva:
+
+* atribut **id**, ki je povsem poljuben in služi le, če z grafom želi doseči nekaj, kar navadno ne
+* atribut **class**, ki mora obzevno biti `stats-chart` - tako JavaScript prepozna element kot kandidata za graf
+* atributi `data-`, kamor vnesemo dejanske podatke grafa in sicer:
+	* **type**, kjer izbiramo med: line, bar, radar, **doughnut, pie**, polar-area, bubble, scatter in area (za naše potrebe najbl aktualna doughnut in pie)
+	* **labels**, kamor vnesemo oznake vnesenih podatkov, so povsem poljubne
+	* **values**, vrednosti grafa, **obvezno cele številke**, ki pa so povsem poljubne (vsota ni nujno 100, graf sam normalizira vrednosti)
+
+Pomebno je, da te atrbiute vnesemo točno, saj bo v nasprotnem primeru sigurno prišlo do napake. Za lažji začetek je [na voljo HTML predloga](https://github.com/zigcccc/ForwardWebsite/blob/master/Examples/example-chart.html), kjer lahko samo popravimo željene vrednosti in oznake in imamo tako manjše možnosti za napako.

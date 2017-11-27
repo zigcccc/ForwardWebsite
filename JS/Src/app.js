@@ -12,6 +12,9 @@ $(document).ready(() => {
   const sideMenu = document.querySelector('#LeftMenu')
   const inputs = document.querySelectorAll('.special-form .form-control')
   const paragraphs = document.querySelectorAll('p')
+
+  const charts = document.querySelectorAll('.stats-chart')
+
   const emailStatChart = document.getElementById('statEmail')
   const emailStatChart2 = document.getElementById('statEmail2')
 
@@ -24,8 +27,17 @@ $(document).ready(() => {
   if (typeof(inputs) != undefined && inputs != null) {
     handleInputClick(inputs)
   }
-  if(typeof(emailStatChart) != undefined && emailStatChart != null){
-    statEmailChart(emailStatChart)
-    statEmailChart(emailStatChart2)
+
+  for(let chart of charts){
+    console.log(chart)
+    if(typeof(chart) != undefined && chart != null){
+      statEmailChart(chart)
+    }
   }
+
+
+  // if(typeof(emailStatChart) != undefined && emailStatChart != null){
+  //   statEmailChart(emailStatChart)
+  //   statEmailChart(emailStatChart2)
+  // }
 })
