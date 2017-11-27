@@ -33,7 +33,7 @@ const statEmailChart = function(context){
     data: myData,
     options: {
       legend: {
-        display: true,
+        display: false,
         position: 'bottom'
       }
     }

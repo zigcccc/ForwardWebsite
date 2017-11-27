@@ -4,6 +4,7 @@
 
 * [Uvod v urejanje](#uvod-v-urejanje)
 * [Vsebinski zaboji](#vsebinski-zaboji)
+* [Deljena vsebina](#deljena-vsebina)
 * [Tipografija](#tipografija)
 * [Fotografije](#fotografije)
 * [Kontaktni obrazci](#kontaktni-obrazci)
@@ -74,6 +75,52 @@ Vsebino včasih znotraj glavnega vsebinskega dela želimo še dalje razdeliti na
 </div>
 ```
 Atribut `grid-element` predstavlja zunanje ogrodje elementa. Znotraj ogrodja nastopata dva zaboja, in sicer `grid-element-header` in `grid-element-body`. V zaboj grid element header vključimo ikono (poljubno) in naslov (obvezno) elementa. Za posamezno stiliziranje glej zgornji primer. V zaboj grid element body pa vstavimo besedilo elementa (ponovno glej zgornji primer). **Pomembno** je, da se držimo zgornje strukture, drugače elementi ne bodo prikazani pravilno.
+
+## Deljena vsebina
+Včasih nam pride prav, da je vsebina razdeljena v več stolpcev. Ker stran že privzeto uporablja Bootstrap CSS framework, se delitev vsebine v glavnem naslanja na to ogrodje. Deljeno vsebino lahko uporabljamo kjer koli na strani, tako znotraj glavnega okvirja (priporočeno), kot tudi izven.
+
+### Klasična dva stolpca
+Največkrat želimo vsebino razdeliti v dva klasična stolpca. To naredimo na sledeč način (podrobnosti Bootstrap class-ov si lahko preberete na [uradni strani](https://getbootstrap.com/docs/4.0/getting-started/introduction/) tega CSS ogrodja):
+
+```html
+<div class="row">
+	<div class="col-sm-6">
+		Ostala vsebina levega stolpca
+	</div>
+	<div class="col-sm-6">
+		Ostala vsebina desnega stolpca
+	</div>
+</div>
+```
+
+V tem primeru smo vsebina razdelili na dva enaka stolpca, ki bosta ostala deljena vse do mobilne verzije, kjer se bosta postavila en pod drugega v vrstnem redu: naprej "levi", nato "desni" stolpec.
+
+### Dva stolpca, kjer se vsebina vedno horizontalno poravna
+Bootstrap prizveto ne deluje na "flex" sistemu, zato je vertikalna poravnava vsebine velikokrat težavna. V ta namen smo uvedli poseben `class` atribut, ki omogoča enostavno vertikalno poravnavo vsebine med dvema stolpcema. Sintaksa je zelo podobna prejšnemu primeru, le da atributu `class="row"` dodamo še `flex-row`. Izgleda nekako tako:
+
+```html
+<div class="row flex-row">
+	Vsa ostala vsebina
+</div>
+```
+
+Elementi se bodo v tem primeru sredinsko poravnali po vertikali.
+
+### Obrnjen vrstni red vsebine
+Včasih želimo obrniti vrstni red vsebine na namizni različici, da ustvarimo na strani neko dinamiko. To bi sicer lahko naredili direktno v kodi, tako da bi zamenjali vrstni red elementov, a bi v tem primeru na mobilni različici, kjer se elementi postavijo en pod drugega, izgledalo čudno. 
+
+V ta namen smo uvedli poseben `class` atribut, ki obrne vrstni red elementov le na namizni različici, in sicer atribut `reversed-row`. Ta atribut se mora vedno uporabljati **v kombinaciji z atributom flex-row**, saj nam le ta način omogoča dinamično spreminjanje vrstnega reda elementov.
+
+Sintaksa je sledeča:
+
+```html
+<div class="row flex-row reversed-row">
+	<div class="col-sm-6">Lev stolpec</div>
+	<div class="col-sm-6">Desni stolpec</div>
+</div>
+```
+
+V tem primeru bo na namizni različici "lev" stolpec v resnici nastopal na desni strani in obratno, na mobilni pa se bodo elementi še vedno pravilno postavili en pod drugega.
 
 ## Tipografija
 ### Naslovi
