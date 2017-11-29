@@ -2,6 +2,7 @@ import {
   hideSideMenu,
   handleInputClick,
   hideEmptyParagraphs,
+  handleSwitchClick,
 } from './PageInteractions'
 
 import { statEmailChart } from './Charts'
@@ -12,6 +13,8 @@ $(document).ready(() => {
   const sideMenu = document.querySelector('#LeftMenu')
   const inputs = document.querySelectorAll('.special-form .form-control')
   const paragraphs = document.querySelectorAll('p')
+
+  const ponudbaCards = document.querySelectorAll('.storitevbox')
 
   const charts = document.querySelectorAll('.stats-chart')
 
@@ -28,8 +31,11 @@ $(document).ready(() => {
     handleInputClick(inputs)
   }
 
+  if(typeof(ponudbaCards) != undefined && ponudbaCards != null){
+    handleSwitchClick(ponudbaCards)
+  }
+
   for(let chart of charts){
-    console.log(chart)
     if(typeof(chart) != undefined && chart != null){
       statEmailChart(chart)
     }
