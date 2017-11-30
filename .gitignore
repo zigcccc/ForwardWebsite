@@ -9,3 +9,5 @@
 !./JS/Src/
 !./JS/package.json
 !./JS/*.config.js
+!CSS/
+!Forme/
