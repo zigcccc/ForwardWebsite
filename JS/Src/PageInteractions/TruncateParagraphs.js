@@ -2,7 +2,6 @@ const truncateParagraphs = function (paragraphs, length) {
   for (let paragraph of paragraphs) {
     paragraph.removeAttribute('style')
     let str = paragraph.innerText
-    console.log(str.length)
     let truncatedStr = str.substring(0, length)
     if(str.length > 140){
       paragraph.innerText = `${truncatedStr}...`

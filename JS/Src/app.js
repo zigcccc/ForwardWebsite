@@ -4,7 +4,8 @@ import {
   hideEmptyParagraphs,
   handleSwitchClick,
   hideEmptyTitles,
-  truncateParagraphs
+  truncateParagraphs,
+  clickableNewsCard
 } from './PageInteractions'
 
 import { statEmailChart } from './Charts'
@@ -17,6 +18,7 @@ $(document).ready(() => {
   const paragraphs = document.querySelectorAll('p')
   const titles = document.querySelectorAll('h2')
 
+  const newsCards = document.querySelectorAll('.snovica_box')
   const newsParagraphs = document.querySelectorAll('.snovica_kropis p')
 
   const ponudbaCards = document.querySelectorAll('.storitevbox')
@@ -30,13 +32,15 @@ $(document).ready(() => {
     hideSideMenu(sideMenu)
   }
   if(typeof(paragraphs) != undefined && paragraphs != null){
-    console.log(paragraphs)
     hideEmptyParagraphs(paragraphs)
   }
 
   if(typeof(newsParagraphs) != undefined && newsParagraphs != null){
-    // Truncate paragraphs: elements, length
     truncateParagraphs(newsParagraphs, 140)
+  }
+
+  if(typeof(newsCards) != undefined && newsCards != null){
+    clickableNewsCard(newsCards)
   }
 
   if(typeof(titles) != undefined && titles != null){
