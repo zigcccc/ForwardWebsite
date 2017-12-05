@@ -37,7 +37,8 @@ $(document).ready(() => {
   }
 
   if(typeof(frontPageCarousel) != undefined && frontPageCarousel != null) {
-    frontCarousel(frontPageCarousel)
+    //             Element           Timeout
+    frontCarousel(frontPageCarousel, 7500)
   }
 
   if(typeof(paragraphs) != undefined && paragraphs != null){

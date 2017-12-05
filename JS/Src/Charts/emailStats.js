@@ -12,19 +12,22 @@ const statEmailChart = function(context){
   let myData = {
     labels: labels,
     datasets: [{
-      label: labels,
-      data: cleanValues,
+      label: 'Letos',
+      data: [cleanValues[1], 100 - cleanValues[1]],
       backgroundColor: [
-        '#0E76BC',
-        '#242D3C',
-        '#84DBFF'
+        '#0e76bc',
+        'rgba(0,0,0,0)'
       ],
-      borderColor: [
-        '#0E76BC',
-        '#242D3C',
-        '#84DBFF'
+      borderColor: 'rgba(0,0,0,0)'
+    },
+    {
+      label: 'Lansko leto',
+      data: [cleanValues[0], 100 - cleanValues[0]],
+      backgroundColor: [
+        '#f5f5f5',
+        'rgba(0,0,0,0)'
       ],
-      borderWidth: 2
+      borderColor: 'rgba(0,0,0,0)'
     }]
   }
 
@@ -35,7 +38,10 @@ const statEmailChart = function(context){
       legend: {
         display: false,
         position: 'bottom'
-      }
+      },
+      tooltips: {enabled: false},
+      hover: {mode: null},
+      cutoutPercentage: 25
     }
   })
   return chart
