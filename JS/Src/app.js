@@ -10,6 +10,8 @@ import {
 
 import { statEmailChart } from './Charts'
 
+import { frontCarousel } from './Carousel'
+
 
 
 $(document).ready(() => {
@@ -28,9 +30,16 @@ $(document).ready(() => {
   const emailStatChart = document.getElementById('statEmail')
   const emailStatChart2 = document.getElementById('statEmail2')
 
+  const frontPageCarousel = $('#front-carousel')
+
   if(sideMenu){
     hideSideMenu(sideMenu)
   }
+
+  if(typeof(frontPageCarousel) != undefined && frontPageCarousel != null) {
+    frontCarousel(frontPageCarousel)
+  }
+
   if(typeof(paragraphs) != undefined && paragraphs != null){
     hideEmptyParagraphs(paragraphs)
   }

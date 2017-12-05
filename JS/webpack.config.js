@@ -26,6 +26,11 @@ module.exports = {
     new UglifyJsPlugin({
       test: /\.js($|\?)/i,
       cache: true
+    }),
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery",
+      "window.jQuery": "jquery"
     })
   ]
 }
