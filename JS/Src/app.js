@@ -5,7 +5,8 @@ import {
   handleSwitchClick,
   hideEmptyTitles,
   truncateParagraphs,
-  clickableNewsCard
+  clickableNewsCard,
+  handleEmptyBanner
 } from './PageInteractions'
 
 import { statEmailChart } from './Charts'
@@ -19,6 +20,7 @@ $(document).ready(() => {
   const inputs = document.querySelectorAll('.special-form .form-control')
   const paragraphs = document.querySelectorAll('p')
   const titles = document.querySelectorAll('h2')
+  const mainBanner = document.querySelector('.mainbanner')
 
   const newsCards = document.querySelectorAll('.snovica_box')
   const newsParagraphs = document.querySelectorAll('.snovica_kropis p')
@@ -34,6 +36,10 @@ $(document).ready(() => {
 
   if(sideMenu){
     hideSideMenu(sideMenu)
+  }
+
+  if(typeof(mainBanner) != undefined && mainBanner != null) {
+    handleEmptyBanner(mainBanner)
   }
 
   if(typeof(frontPageCarousel) != undefined && frontPageCarousel != null) {

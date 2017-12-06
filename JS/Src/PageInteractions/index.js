@@ -5,5 +5,15 @@ import handleSwitchClick from './HandleSwitchClick'
 import hideEmptyTitles from './HideEmptyTitles'
 import truncateParagraphs from './TruncateParagraphs'
 import clickableNewsCard from './ClickableNewsCard'
+import handleEmptyBanner from './HandleEmptyBanner'
 
-export { hideSideMenu, handleInputClick, hideEmptyParagraphs, handleSwitchClick, hideEmptyTitles, truncateParagraphs, clickableNewsCard }
+export { 
+  hideSideMenu,
+  handleInputClick,
+  hideEmptyParagraphs,
+  handleSwitchClick,
+  hideEmptyTitles,
+  truncateParagraphs,
+  clickableNewsCard,
+  handleEmptyBanner
+}

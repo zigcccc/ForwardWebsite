@@ -10,7 +10,9 @@
   "license": "MIT",
   "dependencies": {
     "chart.js": "^2.7.1",
-    "owl.carousel": "^2.2.0"
+    "owl.carousel": "^2.2.0",
+    "tilt.js": "^1.2.1",
+    "vanilla-tilt": "^1.4.1"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
