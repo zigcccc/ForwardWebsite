@@ -6,7 +6,8 @@ import {
   hideEmptyTitles,
   truncateParagraphs,
   clickableNewsCard,
-  handleEmptyBanner
+  handleEmptyBanner,
+  headerOpacity
 } from './PageInteractions'
 
 import { statEmailChart } from './Charts'
@@ -21,6 +22,7 @@ $(document).ready(() => {
   const paragraphs = document.querySelectorAll('p')
   const titles = document.querySelectorAll('h2')
   const mainBanner = document.querySelector('.mainbanner')
+  const pageHeader = document.querySelector('header')
 
   const newsCards = document.querySelectorAll('.snovica_box')
   const newsParagraphs = document.querySelectorAll('.snovica_kropis p')
@@ -40,6 +42,10 @@ $(document).ready(() => {
 
   if(typeof(mainBanner) != undefined && mainBanner != null) {
     handleEmptyBanner(mainBanner)
+  }
+
+  if(typeof(pageHeader) != undefined && pageHeader != null) {
+    headerOpacity(pageHeader)
   }
 
   if(typeof(frontPageCarousel) != undefined && frontPageCarousel != null) {
