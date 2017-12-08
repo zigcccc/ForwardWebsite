@@ -3,7 +3,7 @@ const truncateParagraphs = function (paragraphs, length) {
     paragraph.removeAttribute('style')
     let str = paragraph.innerText
     let truncatedStr = str.substring(0, length)
-    if(str.length > 140){
+    if(str.length > length){
       paragraph.innerText = `${truncatedStr}...`
     }
     if(str.length <= 1 || str == '&nbsp;'){

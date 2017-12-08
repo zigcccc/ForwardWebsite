@@ -7,6 +7,7 @@ import truncateParagraphs from './TruncateParagraphs'
 import clickableNewsCard from './ClickableNewsCard'
 import handleEmptyBanner from './HandleEmptyBanner'
 import headerOpacity from './HeaderOpacity'
+import mobileMenuClick from './MobileMenuClick'
 
 export { 
   hideSideMenu,
@@ -17,5 +18,6 @@ export {
   truncateParagraphs,
   clickableNewsCard,
   handleEmptyBanner,
-  headerOpacity
+  headerOpacity,
+  mobileMenuClick
 }

@@ -7,7 +7,8 @@ import {
   truncateParagraphs,
   clickableNewsCard,
   handleEmptyBanner,
-  headerOpacity
+  headerOpacity,
+  mobileMenuClick
 } from './PageInteractions'
 
 import { statEmailChart } from './Charts'
@@ -23,6 +24,11 @@ $(document).ready(() => {
   const titles = document.querySelectorAll('h2')
   const mainBanner = document.querySelector('.mainbanner')
   const pageHeader = document.querySelector('header')
+
+  const headerParagraphs = document.querySelectorAll('.carousel-text')
+
+  const menuIcon = document.querySelector('.mobile_cart_menu')
+  const mainPage = document.querySelector('#menu-open-overlay');
 
   const newsCards = document.querySelectorAll('.snovica_box')
   const newsParagraphs = document.querySelectorAll('.snovica_kropis p')
@@ -40,8 +46,20 @@ $(document).ready(() => {
     hideSideMenu(sideMenu)
   }
 
+  if(typeof(headerParagraphs) != undefined && headerParagraphs != null) {
+    let windowWidth = window.innerWidth
+    if(windowWidth <= 768){
+      truncateParagraphs(headerParagraphs, 210)
+    }
+  }
+
+
   if(typeof(mainBanner) != undefined && mainBanner != null) {
     handleEmptyBanner(mainBanner)
+  }
+
+  if(typeof(menuIcon) != undefined && menuIcon != undefined) {
+    mobileMenuClick(menuIcon, mainPage)
   }
 
   if(typeof(pageHeader) != undefined && pageHeader != null) {
