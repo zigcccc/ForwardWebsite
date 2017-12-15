@@ -8,6 +8,7 @@ import clickableNewsCard from './ClickableNewsCard'
 import handleEmptyBanner from './HandleEmptyBanner'
 import headerOpacity from './HeaderOpacity'
 import mobileMenuClick from './MobileMenuClick'
+import faqCards from './FaqCards'
 
 export { 
   hideSideMenu,
@@ -19,5 +20,6 @@ export {
   clickableNewsCard,
   handleEmptyBanner,
   headerOpacity,
-  mobileMenuClick
+  mobileMenuClick,
+  faqCards
 }

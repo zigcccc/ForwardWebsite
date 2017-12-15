@@ -8,8 +8,11 @@ import {
   clickableNewsCard,
   handleEmptyBanner,
   headerOpacity,
-  mobileMenuClick
+  mobileMenuClick,
+  faqCards
 } from './PageInteractions'
+
+import { handleSVG } from './Images'
 
 import { statEmailChart } from './Charts'
 
@@ -24,6 +27,8 @@ $(document).ready(() => {
   const titles = document.querySelectorAll('h2')
   const mainBanner = document.querySelector('.mainbanner')
   const pageHeader = document.querySelector('header')
+
+  const svgImages = document.querySelectorAll('.fwd-arrow-icon')
 
   const headerParagraphs = document.querySelectorAll('.carousel-text')
 
@@ -40,6 +45,8 @@ $(document).ready(() => {
   const emailStatChart = document.getElementById('statEmail')
   const emailStatChart2 = document.getElementById('statEmail2')
 
+  const faqCardsElements = document.querySelectorAll('.faq-card')
+
   const frontPageCarousel = $('#front-carousel')
 
   if(sideMenu){
@@ -51,6 +58,14 @@ $(document).ready(() => {
     if(windowWidth <= 768){
       truncateParagraphs(headerParagraphs, 210)
     }
+  }
+
+  if (typeof(svgImages) != undefined && svgImages != null) {
+    handleSVG(svgImages)
+  }
+
+  if (typeof(faqCards) != undefined && faqCards != null) {
+    faqCards(faqCardsElements)
   }
 
 
