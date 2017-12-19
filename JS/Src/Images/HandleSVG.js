@@ -1,7 +1,13 @@
 const handleSVG = (images) => {
   for (let image of images) {
-    let imageURL = image.attr.src
-    console.log(imageURL)
+    let imageURL = image.src
+    $.get(imageURL, (data) => {
+      let svg = data.activeElement
+      if (svg !== undefined && svg !== null) {
+        svg.classList.add('fwd-arrow-icon')
+        image.replaceWith(svg)
+      }
+    }, 'xml')
   }
 }
 

@@ -48,6 +48,7 @@ $(document).ready(() => {
   const faqCardsElements = document.querySelectorAll('.faq-card')
 
   const frontPageCarousel = $('#front-carousel')
+  const frontPageCarouselLoadElem = document.getElementById('front-carousel')
 
   if(sideMenu){
     hideSideMenu(sideMenu)
@@ -62,6 +63,14 @@ $(document).ready(() => {
 
   if (typeof(svgImages) != undefined && svgImages != null) {
     handleSVG(svgImages)
+  }
+
+  if (typeof(frontPageCarouselLoadElem) != undefined && frontPageCarouselLoadElem != null) {
+    frontPageCarouselLoadElem.addEventListener('load', () => {
+      if (typeof(svgImages) != undefined && svgImages != null) {
+        handleSVG(svgImages)
+      }
+    })
   }
 
   if (typeof(faqCards) != undefined && faqCards != null) {

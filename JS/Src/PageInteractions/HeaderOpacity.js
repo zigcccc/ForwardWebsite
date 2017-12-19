@@ -1,4 +1,16 @@
 const headerOpacity = function (header) {
+  // Handle opacity if page is already scrolled
+  let currentOffset = window.pageYOffset
+  if (currentOffset > 0) {
+    header.classList.add('small')
+    if (currentOffset <= 75) {
+      header.style.backgroundColor = 'rgba(22,22,22,0)'.replace(/[^,]+(?=\))/, currentOffset / 100)
+    }
+    else {
+      header.style.backgroundColor = 'rgba(22,22,22,0)'.replace(/[^,]+(?=\))/, '0.75')
+    }
+  }
+
   window.addEventListener('scroll', (e) => {
     let offset = window.pageYOffset
 
