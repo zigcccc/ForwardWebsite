@@ -1652,7 +1652,6 @@ p.basic-paragraph {
 }
 
 .staff-container .staff-card:hover {
-	cursor: pointer;
 	box-shadow: 0 7px 16px rgba(0,0,0,.21);
 }
 
