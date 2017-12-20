@@ -18,8 +18,6 @@ import { statEmailChart } from './Charts'
 
 import { frontCarousel } from './Carousel'
 
-
-
 $(document).ready(() => {
   const sideMenu = document.querySelector('#LeftMenu')
   const inputs = document.querySelectorAll('.special-form .form-control')
@@ -40,7 +38,7 @@ $(document).ready(() => {
 
   const ponudbaCards = document.querySelectorAll('.storitevbox')
 
-  const charts = document.querySelectorAll('.stats-chart')
+  let charts = document.querySelectorAll('.stats-chart')
 
   const emailStatChart = document.getElementById('statEmail')
   const emailStatChart2 = document.getElementById('statEmail2')
@@ -119,9 +117,12 @@ $(document).ready(() => {
     handleSwitchClick(ponudbaCards)
   }
 
-  for(let chart of charts){
-    if(typeof(chart) != undefined && chart != null){
-      statEmailChart(chart)
+  if (typeof(charts) != undefined && charts != null) {
+    charts = Array.from(charts)
+    for(let chart of charts){
+      if(typeof(chart) != undefined && chart != null){
+        statEmailChart(chart)
+      }
     }
   }
 })

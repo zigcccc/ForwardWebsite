@@ -1,10 +1,11 @@
 const hideEmptyParagraphs = function (paragraphs) {
-  Array.from(paragraphs, (paragraph, i) => {
+  paragraphs = Array.from(paragraphs)
+  for (let paragraph of paragraphs) {
     let cond = paragraph.innerText.length > 1 ? true : false;
     if(!cond && paragraph.innerHTML == '&nbsp;'){
       paragraph.style.display = 'none';
     }
-  })
+  }
 }
 
 export default hideEmptyParagraphs

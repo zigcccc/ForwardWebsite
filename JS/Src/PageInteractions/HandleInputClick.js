@@ -1,4 +1,5 @@
 const inputClick = function (inputs) {
+  inputs = Array.from(inputs)
   for (let input of inputs) {
     input.addEventListener('focusin', (event) => {
       let label = event.target.parentNode.children[0]

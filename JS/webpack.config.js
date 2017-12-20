@@ -1,9 +1,10 @@
 var path = require('path');
+require('babel-polyfill');
 var webpack = require('webpack');
 var UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
-  entry: './Src/app.js',
+  entry: ['babel-polyfill', './Src/app.js'],
   output: {
     path: path.resolve(__dirname, 'Dist'),
     filename: 'app.bundle.js'
@@ -14,7 +15,7 @@ module.exports = {
         test: /\.js$/,
         loader: 'babel-loader',
         query: {
-          presets: ['es2015']
+          presets: ['es2015-ie']
         }
       }
     ]

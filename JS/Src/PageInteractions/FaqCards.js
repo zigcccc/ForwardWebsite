@@ -1,4 +1,5 @@
 const faqCards = (cards) => {
+  cards = Array.from(cards)
   for (let card of cards) {
     card.addEventListener('click', (e) => {
       let cond = card.classList.contains('open')

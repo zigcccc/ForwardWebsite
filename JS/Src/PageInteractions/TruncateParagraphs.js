@@ -1,4 +1,5 @@
 const truncateParagraphs = function (paragraphs, length) {
+  paragraphs = Array.from(paragraphs)
   for (let paragraph of paragraphs) {
     paragraph.removeAttribute('style')
     let str = paragraph.innerText

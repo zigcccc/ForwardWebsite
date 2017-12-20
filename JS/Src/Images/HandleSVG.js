@@ -1,4 +1,5 @@
 const handleSVG = (images) => {
+  images = Array.from(images)
   for (let image of images) {
     let imageURL = image.src
     $.get(imageURL, (data) => {

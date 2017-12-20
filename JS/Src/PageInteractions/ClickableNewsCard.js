@@ -1,4 +1,5 @@
 const clickableNewsCard = function (cards) {
+  cards = Array.from(cards)
   for (let card of cards) {
     let pageURL = ''
     let cardURL = card.innerHTML.match(/href="(.*?)"/)[1]

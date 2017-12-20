@@ -5,6 +5,7 @@ const statEmailChart = function(context){
   let labels = context.dataset.labels.split(', ')
   let values = context.dataset.values.split(', ')
   let cleanValues = []
+  values = Array.from(values)
   for (let value of values) {
     cleanValues.push(parseInt(value))
   }
