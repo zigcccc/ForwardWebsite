@@ -3014,7 +3014,17 @@ h1.special .fwd-arrow-icon {
 	.footer-container .footbox .footer-certificates .footer-certificates-icons > div, .footer-container .footbox .footer-certificates .footer-certificates-icons > img {
 		float: none;
 		width: unset;
-	}
+  }
+  @media screen and (max-width: 550px) {
+    .footer-container {
+      grid-template-columns: 1fr
+    }
+    .footer-container .footbox {
+      float: none;
+      width: 100%;
+    }
+    .footer-container .footbox .footer-certificates .footer-certificates-icons {}
+  }
 }
 
 #mc-embedded-subscribe {
@@ -3033,6 +3043,12 @@ h1.special .fwd-arrow-icon {
 	font-size: 14px !important;
 	margin-top: 0.75em;
 	height: 3em !important;
+}
+
+@media screen and (max-width: 550px) {
+  #mc_embed_signup {
+    margin-top: 0;
+  }
 }
 
 /**********************/

@@ -1,0 +1,106 @@
+/* ELEMENT CMS - GENERAL CSS */
+.admintoolbar { background-color:#ffffff;}
+html, body, input, textarea {font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;}
+table { font-size:1em; border-spacing: 0;  border-collapse: collapse;}
+td, p, ul, li, ol, form, tr, div, input, textarea, h1, h2, h3, h4, h5, h6, h7, h8, h9 {margin:0px; padding:0; outline:0px;}
+
+/* ----------------------------------------------------------------------- print narocila ------------------------------------------------*/
+.row {clear:both; margin:0; padding:0; float:left; font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;}
+a { color:#000; text-decoration:none}
+.cart_pregled_sum, .cart_pregled_izdelek, .cart_pregled_naslovdostava  {page-break-inside: avoid; -webkit-region-break-inside: avoid; page-break-before:auto; page-break-after:auto;}
+
+/* floati */
+.cart_pregled_slika, .cart_pregled_podatki, .cart_pregled_cene, .cart_pregled_cenatxt, .cart_pregled_cenavalue, .cart_pregled_koltxt, .cart_pregled_kolvalue, .cart_pregled_sumcenatxt, .cart_pregled_sumcenavalue, .cart_sum_txt, 
+.cart_sum_value
+{float:left;}
+
+/* 100% print row */
+.cart_pregled_stnarocilarow, .cart_pregled_txtzgoraj, .cart_pregled_izdelki, .cart_pregled_izdelek, .cart_pregled_naziv, .cart_pregled_sum, .cart_pregled_txtspodaj,
+.cart_pregled_opombe, .cart_pregled_dostava, .cart_pregled_placilo, .cart_pregled_opomba
+{margin-left:0; margin-right:0px; padding-left:0; padding-right:0px; width:750px; clear:both;}
+
+/* 50% print row */
+.cart_pregled_left, .buydata_left .cart_pregled_title, .cart_pregled_right, .buydata_right .cart_pregled_title, .cart_pregled_naslovi, .cart_pregled_narocilotxt, .cart_pregled_stnarocila
+{float:left; width:375px; margin-left:0; margin-right:0px; padding-left:0; padding-right:0px;}
+
+/*.cart_pregled_left, .cart_pregled_right {float:left; width:375px; margin-left:0; margin-right:0px; padding-left:0; padding-right:0px; font-size:12px;}*/
+
+.cart_pregled_left { width:440px; padding-left:10px;}
+.cart_pregled_right { width:310px;}
+
+/* border bottom */
+.cart_pregled_cenakos, .cart_pregled_popust, .cart_pregled_popustznesek, .cart_pregled_cenaspopustom, .cart_pregled_ddv, .cart_pregled_cena_zddv, .cart_pregled_kol, 
+.cart_pregled_izdelek, .cart_sum_brezpopusta, .cart_sum_popust, .cart_sum_spopustom, .cart_sum_ddv, .cart_sum_zaplacilo
+{border-bottom:1px solid #999;}
+
+/* small font */
+.cart_pregled_naslovi, .cart_pregled_txtzgoraj, .cart_pregled_cene, .cart_pregled_podatki, .cart_pregled_sum, .cart_pregled_dostava, .cart_pregled_placilo, .cart_pregled_opomba, .cart_pregled_txtspodaj { font-size:12px;}
+
+.cart_pregled_steps, .cart_pregled_progressbar { display:none;}
+
+.print_logo {border-bottom:1px solid #999; padding-bottom:20px; margin-bottom:20px;}
+.print_logo img { height:80px;}
+.buydata_left .cart_pregled_title, .buydata_right .cart_pregled_title { display:none;}
+.cart_pregled_title { font-size:20px; font-weight:normal;}
+.cart_pregled_naslovi h2 { font-size:16px; margin-top:10px;}
+.cart_pregled_stnarocilarow { margin-top:20px; margin-bottom:20px; border-bottom:1px solid #999; border-top:1px solid #999; padding:5px 0;}
+.cart_pregled_narocilotxt { margin-left:10px;}
+.cart_pregled_stnarocila { text-align:right; padding-top:3px; font-size:14px; margin-right:10px;}
+.cart_pregled_izdelek {margin-bottom:1px;}
+.cart_pregled_naziv { margin-top:20px; margin-bottom:10px;}
+
+.cart_pregled_naziv { float:none;}
+.cart_pregled_slika { margin:0 0 3px 0; padding:0; width:200px; height:150px;}
+.cart_pregled_slika img {width:200px;}
+
+.cart_pregled_txtzgoraj, .cart_pregled_slika, .cart_pregled_naziv, .cart_pregled_txtspodaj { padding-left:10px;}
+
+.cart_pregled_podatki { width:240px; margin-left:20px; margin-right:20px;}
+.cart_pregled_opomba_artikel { margin-top:10px; margin-bottom:3px;}
+
+.cart_pregled_cene {width:310px; margin:0 0 3px 0; padding:0;}
+.cart_pregled_cenatxt, .cart_pregled_cenavalue, .cart_pregled_koltxt, .cart_pregled_kolvalue, .cart_pregled_sumcenatxt, .cart_pregled_sumcenavalue {width:145px;}
+
+.cart_pregled_cenakos, .cart_pregled_popust, .cart_pregled_popustznesek, .cart_pregled_cenaspopustom, .cart_pregled_ddv, .cart_pregled_cena_zddv, 
+.cart_pregled_kol, .cart_pregled_sumcena, .cart_sum_brezpopusta, .cart_sum_popust, .cart_sum_spopustom, .cart_sum_ddv, .cart_sum_zaplacilo
+{clear:both; padding:5px 10px;}
+
+.cart_pregled_cenavalue, .cart_pregled_kolvalue, .cart_pregled_sumcenavalue, .cart_sum_value {text-align:right;}
+.cart_pregled_cenavalue, .cart_pregled_kolvalue, .cart_pregled_sumcenavalue {margin-right:10px;}
+
+.cart_pregled_sum {background:#f5f5f5;}
+.cart_sum_txt {width:430px;}
+.cart_sum_value { width:300px;}
+.cart_sum_zaplacilo { font-size:16px;}
+
+.cart_pregled_txtspodaj { padding-top:10px; padding-bottom:10px;}
+.cart_pregled_naslovdostava { margin-bottom:5px; padding:5px;}
+.cart_pregled_naslovdostava h3 { padding-left:10px; padding-right:10px; margin:0; font-style:italic;}
+.cart_pregled_naslovdostava p { padding-left:10px; padding-right:10px;}
+
+.cart_pregled_dostava, .cart_pregled_placilo, .cart_pregled_opomba { border-bottom:1px solid #333; padding:5px 10px;}
+.cart_pregled_opomba { border-bottom:none;}
+/* -------------- */
+
+
+/* print za ure podpore*/
+.skrbnik_title, .skrbnik_datumi {margin-left:0; margin-right:0px; padding-left:0; padding-right:0px; width:750px; clear:both;}
+.ure_pomoc_top, .ure_pomoc_seznam, .ure_pomoc_row {clear:both; width:750px; padding:3px 0px; font-size:12px;}
+.ure_pomoc_coll_1, .ure_pomoc_coll_2, .ure_pomoc_coll_3, .ure_pomoc_coll_4, .ure_pomoc_coll_5, .ure_pomoc_coll_6, .ure_pomoc_coll_7, .ure_pomoc_coll_8 {float:left;}
+
+.skrbnik_title { margin:10px 0 0 0; font-size:20px; background:#eaeaea; padding:10px;}
+.skrbnik_datumi{border-bottom:1px solid #999; border-top:1px solid #999; padding:10px;}
+.skrbnik_stnarocila, .skrbnik_datum, .skrbnik_valuta {float:left; width:250px; margin-left:0; margin-right:0px; padding-left:0; padding-right:0px; font-size:14px;}
+
+.ure_pomoc_top {font-weight:bold; background:#eaeaea; border-bottom:1px solid #e5e5e5; border-top:1px solid #e5e5e5;}
+.ure_pomoc_seznam {}
+.ure_pomoc_row {border-bottom:1px solid #e5e5e5;}
+
+.ure_pomoc_coll_1 { width:50px;}
+.ure_pomoc_coll_2 { width:170px;}
+.ure_pomoc_coll_3 { width:50px; text-align:center;}
+.ure_pomoc_coll_4 { width:100px; text-align:right;}
+.ure_pomoc_coll_5 { width:70px; text-align:right;}
+.ure_pomoc_coll_6 { width:130px; text-align:right;}
+.ure_pomoc_coll_7 { width:70px; text-align:right;}
+.ure_pomoc_coll_8 { width:100px; text-align:right;}
