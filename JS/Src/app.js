@@ -18,6 +18,12 @@ import { statEmailChart } from './Charts'
 
 import { frontCarousel } from './Carousel'
 
+import { dispatchDatalayerEvent } from './Analytics'
+
+// Initialized datalayer
+let dataLayer = window.dataLayer || []
+window.dispatchDatalayerEvent = dispatchDatalayerEvent
+
 $(document).ready(() => {
   const sideMenu = document.querySelector('#LeftMenu')
   const inputs = document.querySelectorAll('.special-form .form-control')
