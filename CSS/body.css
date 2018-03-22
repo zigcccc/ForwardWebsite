@@ -2901,7 +2901,7 @@ h1.special .fwd-arrow-icon {
 		flex-wrap: wrap;
 	}
 	.cards-container .card {
-		flex: 0 0 100%;
+		flex: 0 0 100% !important;
 		margin: 0;
 		padding: 1em;
 	}
@@ -2913,7 +2913,7 @@ h1.special .fwd-arrow-icon {
 	}
 
 	.cards-container .card .card-image-container {
-		height: 50px;
+		height: 65px;
 	}
 	.overlayed-image-container .content h3.image-quote {
 		font-size: 18px;

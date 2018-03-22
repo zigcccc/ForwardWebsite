@@ -20,6 +20,8 @@ import { frontCarousel } from './Carousel'
 
 import { dispatchDatalayerEvent } from './Analytics'
 
+import { ValidateForm } from './FormValidation'
+
 // Initialized datalayer
 let dataLayer = window.dataLayer || []
 window.dispatchDatalayerEvent = dispatchDatalayerEvent
@@ -53,6 +55,12 @@ $(document).ready(() => {
 
   const frontPageCarousel = $('#front-carousel')
   const frontPageCarouselLoadElem = document.getElementById('front-carousel')
+
+  const contactForm = document.querySelector('form.special-form')
+
+  if (contactForm) {
+    ValidateForm(contactForm)
+  }
 
   if(sideMenu){
     hideSideMenu(sideMenu)
