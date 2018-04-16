@@ -1,142 +1,180 @@
 import {
-  hideSideMenu,
-  handleInputClick,
-  hideEmptyParagraphs,
-  handleSwitchClick,
-  hideEmptyTitles,
-  truncateParagraphs,
-  clickableNewsCard,
-  handleEmptyBanner,
-  headerOpacity,
-  mobileMenuClick,
-  faqCards
-} from './PageInteractions'
+	hideSideMenu,
+	handleInputClick,
+	hideEmptyParagraphs,
+	handleSwitchClick,
+	hideEmptyTitles,
+	truncateParagraphs,
+	clickableNewsCard,
+	handleEmptyBanner,
+	headerOpacity,
+	mobileMenuClick,
+	faqCards
+} from './PageInteractions';
 
-import { handleSVG } from './Images'
+import { handleSVG } from './Images';
 
-import { statEmailChart } from './Charts'
+import { statEmailChart } from './Charts';
 
-import { frontCarousel } from './Carousel'
+import { frontCarousel } from './Carousel';
 
-import { dispatchDatalayerEvent } from './Analytics'
+import { dispatchDatalayerEvent } from './Analytics';
 
-import { ValidateForm } from './FormValidation'
+import { ValidateForm } from './FormValidation';
 
 // Initialized datalayer
-let dataLayer = window.dataLayer || []
-window.dispatchDatalayerEvent = dispatchDatalayerEvent
+let dataLayer = window.dataLayer || [];
+window.dispatchDatalayerEvent = dispatchDatalayerEvent;
 
 $(document).ready(() => {
-  const sideMenu = document.querySelector('#LeftMenu')
-  const inputs = document.querySelectorAll('.special-form .form-control')
-  const paragraphs = document.querySelectorAll('p')
-  const titles = document.querySelectorAll('h2')
-  const mainBanner = document.querySelector('.mainbanner')
-  const pageHeader = document.querySelector('header')
+	const sideMenu = document.querySelector('#LeftMenu');
+	const inputs = document.querySelectorAll('.special-form .form-control');
+	const paragraphs = document.querySelectorAll('p');
+	const titles = document.querySelectorAll('h2');
+	const mainBanner = document.querySelector('.mainbanner');
+	const pageHeader = document.querySelector('header');
 
-  const svgImages = document.querySelectorAll('.fwd-arrow-icon')
+	const svgImages = document.querySelectorAll('.fwd-arrow-icon');
 
-  const headerParagraphs = document.querySelectorAll('.carousel-text')
+	const headerParagraphs = document.querySelectorAll('.carousel-text');
 
-  const menuIcon = document.querySelector('.mobile_cart_menu')
-  const mainPage = document.querySelector('#menu-open-overlay');
+	const menuIcon = document.querySelector('.mobile_cart_menu');
+	const mainPage = document.querySelector('#menu-open-overlay');
 
-  const newsCards = document.querySelectorAll('.snovica_box')
-  const newsParagraphs = document.querySelectorAll('.snovica_kropis p')
+	const newsCards = document.querySelectorAll('.snovica_box');
+	const newsParagraphs = document.querySelectorAll('.snovica_kropis p');
 
-  const ponudbaCards = document.querySelectorAll('.storitevbox')
+	const ponudbaCards = document.querySelectorAll('.storitevbox');
 
-  let charts = document.querySelectorAll('.stats-chart')
+	let charts = document.querySelectorAll('.stats-chart');
 
-  const emailStatChart = document.getElementById('statEmail')
-  const emailStatChart2 = document.getElementById('statEmail2')
+	const emailStatChart = document.getElementById('statEmail');
+	const emailStatChart2 = document.getElementById('statEmail2');
 
-  const faqCardsElements = document.querySelectorAll('.faq-card')
+	const faqCardsElements = document.querySelectorAll('.faq-card');
 
-  const frontPageCarousel = $('#front-carousel')
-  const frontPageCarouselLoadElem = document.getElementById('front-carousel')
+	const frontPageCarousel = $('#front-carousel');
+	const frontPageCarouselLoadElem = document.getElementById('front-carousel');
 
-  const contactForm = document.querySelector('form.special-form')
+	const contactForm = document.querySelector('form.special-form');
 
-  if (contactForm) {
-    ValidateForm(contactForm)
-  }
+	const videoCarousel = $('#video-reference');
 
-  if(sideMenu){
-    hideSideMenu(sideMenu)
-  }
+	if (contactForm) {
+		ValidateForm(contactForm);
+	}
 
-  if(typeof(headerParagraphs) != undefined && headerParagraphs != null) {
-    let windowWidth = window.innerWidth
-    if(windowWidth <= 768){
-      truncateParagraphs(headerParagraphs, 210)
-    }
-  }
+	if (sideMenu) {
+		hideSideMenu(sideMenu);
+	}
 
-  if (typeof(svgImages) != undefined && svgImages != null) {
-    handleSVG(svgImages)
-  }
+	if (typeof videoCarousel !== undefined && videoCarousel !== null) {
+		let conf = {
+			autoplay: false,
+			lazyload: false,
+			navigation: true,
+			dots: true,
+			hoverPause: true
+		};
+		frontCarousel(
+			videoCarousel,
+			conf.timeout,
+			conf.autoplay,
+			conf.lazyload,
+			conf.navigation,
+			conf.dots,
+			conf.hoverPause
+		);
+	}
 
-  if (typeof(frontPageCarouselLoadElem) != undefined && frontPageCarouselLoadElem != null) {
-    frontPageCarouselLoadElem.addEventListener('load', () => {
-      if (typeof(svgImages) != undefined && svgImages != null) {
-        handleSVG(svgImages)
-      }
-    })
-  }
+	if (typeof headerParagraphs != undefined && headerParagraphs != null) {
+		let windowWidth = window.innerWidth;
+		if (windowWidth <= 768) {
+			truncateParagraphs(headerParagraphs, 210);
+		}
+	}
 
-  if (typeof(faqCards) != undefined && faqCards != null) {
-    faqCards(faqCardsElements)
-  }
+	if (typeof svgImages != undefined && svgImages != null) {
+		handleSVG(svgImages);
+	}
 
+	if (
+		typeof frontPageCarouselLoadElem != undefined &&
+		frontPageCarouselLoadElem != null
+	) {
+		frontPageCarouselLoadElem.addEventListener('load', () => {
+			if (typeof svgImages != undefined && svgImages != null) {
+				handleSVG(svgImages);
+			}
+		});
+	}
 
-  if(typeof(mainBanner) != undefined && mainBanner != null) {
-    handleEmptyBanner(mainBanner)
-  }
+	if (typeof faqCards != undefined && faqCards != null) {
+		faqCards(faqCardsElements);
+	}
 
-  if(typeof(menuIcon) != undefined && menuIcon != undefined) {
-    mobileMenuClick(menuIcon, mainPage)
-  }
+	if (typeof mainBanner != undefined && mainBanner != null) {
+		handleEmptyBanner(mainBanner);
+	}
 
-  if(typeof(pageHeader) != undefined && pageHeader != null) {
-    headerOpacity(pageHeader)
-  }
+	if (typeof menuIcon != undefined && menuIcon != undefined) {
+		mobileMenuClick(menuIcon, mainPage);
+	}
 
-  if(typeof(frontPageCarousel) != undefined && frontPageCarousel != null) {
-    //             Element           Timeout
-    frontCarousel(frontPageCarousel, 7500)
-  }
+	if (typeof pageHeader != undefined && pageHeader != null) {
+		headerOpacity(pageHeader);
+	}
 
-  if(typeof(paragraphs) != undefined && paragraphs != null){
-    hideEmptyParagraphs(paragraphs)
-  }
+	if (typeof frontPageCarousel != undefined && frontPageCarousel != null) {
+		let conf = {
+			interval: 7500,
+			autoplay: true,
+			lazyload: true,
+			navigation: false,
+			dots: true,
+			hoverPause: true
+		};
+		frontCarousel(
+			frontPageCarousel,
+			conf.interval,
+			conf.autoplay,
+			conf.lazyload,
+			conf.navigation,
+			conf.dots,
+			conf.hoverPause
+		);
+	}
 
-  if(typeof(newsParagraphs) != undefined && newsParagraphs != null){
-    truncateParagraphs(newsParagraphs, 140)
-  }
+	if (typeof paragraphs != undefined && paragraphs != null) {
+		hideEmptyParagraphs(paragraphs);
+	}
 
-  if(typeof(newsCards) != undefined && newsCards != null){
-    clickableNewsCard(newsCards)
-  }
+	if (typeof newsParagraphs != undefined && newsParagraphs != null) {
+		truncateParagraphs(newsParagraphs, 140);
+	}
 
-  if(typeof(titles) != undefined && titles != null){
-    hideEmptyTitles(titles)
-  }
+	if (typeof newsCards != undefined && newsCards != null) {
+		clickableNewsCard(newsCards);
+	}
 
-  if (typeof(inputs) != undefined && inputs != null) {
-    handleInputClick(inputs)
-  }
+	if (typeof titles != undefined && titles != null) {
+		hideEmptyTitles(titles);
+	}
 
-  if(typeof(ponudbaCards) != undefined && ponudbaCards != null){
-    handleSwitchClick(ponudbaCards)
-  }
+	if (typeof inputs != undefined && inputs != null) {
+		handleInputClick(inputs);
+	}
 
-  if (typeof(charts) != undefined && charts != null) {
-    charts = Array.from(charts)
-    for(let chart of charts){
-      if(typeof(chart) != undefined && chart != null){
-        statEmailChart(chart)
-      }
-    }
-  }
-})
+	if (typeof ponudbaCards != undefined && ponudbaCards != null) {
+		handleSwitchClick(ponudbaCards);
+	}
+
+	if (typeof charts != undefined && charts != null) {
+		charts = Array.from(charts);
+		for (let chart of charts) {
+			if (typeof chart != undefined && chart != null) {
+				statEmailChart(chart);
+			}
+		}
+	}
+});

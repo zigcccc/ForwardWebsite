@@ -1,16 +1,29 @@
-import 'owl.carousel'
-const frontCarousel = function (carousel, interval) {
-  const options = {
-    loop: true,
-    margin: 0,
-    nav: false,
-    items: 1,
-    autoplayHoverPause: false,
-    autoplay: true,
-    lazyload: true,
-    autoplayTimeout: interval
-  }
-  carousel.owlCarousel(options)
-}
+import 'owl.carousel';
+const frontCarousel = function(
+	carousel,
+	interval = 7500,
+	autoplay = true,
+	lazyload = true,
+	nav = false,
+	dots = false,
+	hoverPause = false
+) {
+	const options = {
+		loop: true,
+		margin: 0,
+		nav: nav,
+		items: 1,
+		autoplayHoverPause: hoverPause,
+		autoplay: autoplay,
+		lazyload: lazyload,
+		autoplayTimeout: interval,
+		dots: dots,
+		navText: [
+			'<i class="fa fa-lg fa-chevron-left"></i>',
+			'<i class="fa fa-lg fa-chevron-right"></i>'
+		]
+	};
+	carousel.owlCarousel(options);
+};
 
-export default frontCarousel
+export default frontCarousel;
