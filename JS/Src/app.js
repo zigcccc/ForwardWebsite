@@ -129,7 +129,7 @@ $(document).ready(() => {
 		let conf = {
 			interval: 7500,
 			autoplay: true,
-			lazyload: true,
+			lazyload: false,
 			navigation: false,
 			dots: true,
 			hoverPause: true
