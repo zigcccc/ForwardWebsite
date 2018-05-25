@@ -1,3 +1,4 @@
+const { owlCarousel } = require('owl.carousel');
 import {
 	hideSideMenu,
 	handleInputClick,
@@ -15,8 +16,6 @@ import {
 import { handleSVG } from './Images';
 
 import { statEmailChart } from './Charts';
-
-import { frontCarousel } from './Carousel';
 
 import { dispatchDatalayerEvent } from './Analytics';
 
@@ -69,22 +68,16 @@ $(document).ready(() => {
 	}
 
 	if (typeof videoCarousel !== undefined && videoCarousel !== null) {
-		let conf = {
+		const options = {
 			autoplay: false,
 			lazyload: false,
 			navigation: true,
 			dots: true,
-			hoverPause: true
+			hoverPause: true,
+			slideBy: 1,
+			items: 1
 		};
-		frontCarousel(
-			videoCarousel,
-			conf.timeout,
-			conf.autoplay,
-			conf.lazyload,
-			conf.navigation,
-			conf.dots,
-			conf.hoverPause
-		);
+		videoCarousel.owlCarousel(options);
 	}
 
 	if (typeof headerParagraphs != undefined && headerParagraphs != null) {
@@ -126,23 +119,19 @@ $(document).ready(() => {
 	}
 
 	if (typeof frontPageCarousel != undefined && frontPageCarousel != null) {
-		let conf = {
+		const options = {
+			loop: true,
 			interval: 7500,
 			autoplay: true,
 			lazyload: false,
 			navigation: false,
 			dots: true,
-			hoverPause: true
+			hoverPause: true,
+			autoWidth: false,
+			slideBy: 1,
+			items: 1
 		};
-		frontCarousel(
-			frontPageCarousel,
-			conf.interval,
-			conf.autoplay,
-			conf.lazyload,
-			conf.navigation,
-			conf.dots,
-			conf.hoverPause
-		);
+		frontPageCarousel.owlCarousel(options);
 	}
 
 	if (typeof paragraphs != undefined && paragraphs != null) {
